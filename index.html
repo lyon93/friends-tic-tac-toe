@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Board</title>
+</head>
+<style>
+    body {
+        background: black;
+        color: white;
+    }
+
+    .game-board {
+        display: grid;
+        grid-template-columns: 120px 120px 120px;
+        grid-template-rows: 120px 120px 120px 20px;
+        justify-content: center;
+    }
+
+    .box {
+        border: 2px solid white;
+        text-align: center;
+        cursor: pointer;
+        line-height: 100px;
+        font-size: 30px;
+    }
+
+    img {
+        width: 75px;
+        height: 75px;
+        padding: 15px;
+        border: 2px;
+        border-radius: 50px;
+    }
+
+    .center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+
+    }
+
+    button:focus {
+        outline: 5px auto Highlight;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        min-height: 3rem;
+        min-width: 7rem;
+        padding: 0.75rem;
+        text-align: center;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .btn:disabled {
+        cursor: not-allowed;
+    }
+
+    .btn-reset {
+        color: white;
+    }
+
+    .btn-reset {
+        background-color: red;
+    }
+
+    .btn-reset:hover {
+        background-color: lightcoral;
+    }
+
+    .btn-reset:hover:disabled {
+        background-color: red;
+    }
+
+    #print {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .disable-select {
+        user-select: none;
+        /* supported by Chrome and Opera */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+    }
+</style>
+
+<body>
+
+    <div class="center disable-select">
+        <h1 style="text-align:center;">Tic Tac Toe</h1>
+        <div id="board" class="game-board"></div>
+        <p id="print"></p>
+        <button class="btn btn-reset" onclick="restartGame()">Reset</button>
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
